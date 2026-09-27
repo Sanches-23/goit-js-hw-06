@@ -8,24 +8,24 @@
 // нічого там не змінюй.
 
 class Storage {
-    #item;
+    #items;
 
     constructor(item) {
-        this.#item = item;
+        this.#items = item;
     };
 
     getItems() {
-        return this.#item;
+        return this.#items;
     };
 
     addItem(newElem) {
-        return this.#item.push(newElem);
+        this.#items.push(newElem);
     };
 
     removeItem(removeElem) {
-        const index = this.#item.indexOf(removeElem);
+        const index = this.#items.indexOf(removeElem);
         if (index !== -1) {
-            return this.#item.splice(index, 1);
+            this.#items.splice(index, 1);
         }
     }
 }
