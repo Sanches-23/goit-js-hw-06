@@ -7,6 +7,30 @@
 // оголошення класу для перевірки коректності роботи. У консоль будуть виведені результати їх роботи. Будь ласка,
 // нічого там не змінюй.
 
+class Storage {
+    #item;
+
+    constructor(item) {
+        this.#item = item;
+    };
+
+    getItems() {
+        return this.#item;
+    };
+
+    addItem(newElem) {
+        return this.#item.push(newElem);
+    };
+
+    removeItem(removeElem) {
+        const index = this.#item.indexOf(removeElem);
+        if (index !== -1) {
+            return this.#item.splice(index, 1);
+        }
+    }
+}
+
+console.log("=========================Task2=========================");
 const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
 console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
 
@@ -15,11 +39,6 @@ console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator",
 
 storage.removeItem("Prolonger");
 console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
-
-
-
-
-
 
 
 //Вимоги
@@ -32,7 +51,8 @@ console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
 // Метод removeItem змінює значення приватної властивості items екземпляра класу, який його викликає.
 // У результаті виклику new Storage(["Nanitoids", "Prolonger", "Antigravitator"]) значення змінної storage — об'єкт.
 // В об'єкта storage немає публічної властивості items.
-// Перший виклик storage.getItems() одразу після ініціалізації екземпляра повертає масив ["Nanitoids", "Prolonger", "Antigravitator"].
-// Другий виклик storage.getItems() після виклику storage.addItem("Droid") повертає масив ["Nanitoids", "Prolonger", "Antigravitator", "Droid"].
-// Третій виклик storage.getItems() після виклику storage.removeItem("Prolonger") повертає масив ["Nanitoids", "Antigravitator", "Droid"].
-// Результати всіх викликів виведено в консоль.
+// Перший виклик storage.getItems() одразу після ініціалізації екземпляра повертає масив ["Nanitoids", "Prolonger",
+// "Antigravitator"]. Другий виклик storage.getItems() після виклику storage.addItem("Droid") повертає масив
+// ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]. Третій виклик storage.getItems() після виклику
+// storage.removeItem("Prolonger") повертає масив ["Nanitoids", "Antigravitator", "Droid"]. Результати всіх викликів
+// виведено в консоль.

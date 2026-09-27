@@ -10,20 +10,20 @@ const customer = {
     orders: ["Burger", "Pizza", "Salad"],
     // Change code below this line
     getBalance() {
-        return balance;
+        return this.balance;
     },
     getDiscount() {
-        return discount;
+        return this.discount;
     },
     setDiscount(value) {
-        discount = value;
+        this.discount = value;
     },
     getOrders() {
-        return orders;
+        return this.orders;
     },
     addOrder(cost, order) {
-        balance -= cost - cost * discount;
-        orders.push(order);
+        this.balance -= cost - cost * this.discount;
+        this.orders.push(order);
     },
     // Change code above this line
 };
@@ -35,21 +35,3 @@ customer.addOrder(5000, "Steak");
 console.log(customer.getBalance()); // 19750
 
 console.log(customer.getOrders()); // ["Burger", "Pizza", "Salad", "Steak"]
-
-
-
-
-
-
-
-//Вимоги
-//
-// Оголошено змінну customer.
-// Значення змінної customer — об'єкт із властивостями та методами.
-// Виклик customer.getDiscount() повертає поточне значення властивості discount.
-// Виклик customer.setDiscount(0.15) оновлює значення властивості discount.
-// Виклик customer.getBalance() повертає поточне значення властивості balance.
-// Виклик customer.getOrders() повертає поточне значення властивості orders.
-// Виклик customer.addOrder(5000, "Steak") додає "Steak" у масив значень властивості orders та оновлює баланс.
-// Методи getBalance, getDiscount, setDiscount, getOrders і addOrder об'єкта customer використовують this.
-// Результати всіх викликів виведено в консоль.

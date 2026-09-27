@@ -7,6 +7,28 @@
 // Візьми код нижче з ініціалізацією екземпляра й викликами методів і встав його після оголошення класу для перевірки
 // коректності роботи. У консоль будуть виведені результати їх роботи. Будь ласка, нічого там не змінюй.
 
+class StringBuilder {
+    #value;
+
+    constructor(initialValue) {
+        this.#value = initialValue;
+    }
+    getValue(){
+        return this.#value;
+    }
+    padEnd(str){
+        this.#value += this.#value + str;
+    }
+    padStart(str){
+        this.#value = str + this.#value;
+    }
+    padBoth(str){
+        this.padStart(str);
+        this.padEnd(str);
+    }
+}
+
+console.log("=========================Task3=========================");
 const builder = new StringBuilder(".");
 console.log(builder.getValue()); // "."
 
@@ -19,14 +41,7 @@ console.log(builder.getValue()); // "^.^"
 builder.padBoth("=");
 console.log(builder.getValue()); // "=^.^="
 
-
-
-
-
-
-
 //Вимоги
-//
 // Оголошено клас StringBuilder.
 // Властивість value у класі StringBuilder оголошена приватною.
 // У класі StringBuilder оголошено методи getValue, padEnd, padStart і padBoth.
@@ -34,8 +49,8 @@ console.log(builder.getValue()); // "=^.^="
 // Методи padEnd, padStart і padBoth змінюють значення приватної властивості value екземпляра класу, який його викликає.
 // У результаті виклику new StringBuilder(".") значення змінної builder — об'єкт.
 // Об'єкт builder не містить публічної властивості value.
-// Перший виклик builder.getValue() одразу після ініціалізації екземпляра повертає рядок ..
-// Другий виклик builder.getValue() після виклику builder.padStart("^") повертає рядок ^..
-// Третій виклик builder.getValue() після виклику builder.padEnd("^") повертає рядок ^.^.
-// Четвертий виклик builder.getValue() після виклику builder.padBoth("=") повертає рядок =^.^=.
+// Перший виклик builder.getValue() одразу після ініціалізації екземпляра повертає рядок .
+// Другий виклик builder.getValue() після виклику builder.padStart("^") повертає рядок ^.
+// Третій виклик builder.getValue() після виклику builder.padEnd("^") повертає рядок ^.^
+// Четвертий виклик builder.getValue() після виклику builder.padBoth("=") повертає рядок =^.^=
 // Результати всіх викликів виведено в консоль.
